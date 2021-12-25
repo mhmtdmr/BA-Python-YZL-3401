@@ -111,26 +111,4 @@ print("Toplam =",pozToplam)
 
 # https://github.com/
 # https://desktop.github.com/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Github Test
