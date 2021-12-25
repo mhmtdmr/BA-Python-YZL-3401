@@ -1,4 +1,5 @@
 from time import sleep
+from random import randint
 
 # kosul = True
 # # kosul = False
@@ -99,16 +100,68 @@ from time import sleep
 # Kullanıcı -1 girdiğinde toplam ekrana yazdırılıp
 # program sonlanacak.
 
-pozToplam = 0
-while(True):
-  sayi = int(input("sayı:"))
-  if(sayi>0):
-    pozToplam += sayi
-  elif(sayi==-1):
-    break
-print("Toplam =",pozToplam)
+# pozToplam = 0
+# while(True):
+#   sayi = int(input("sayı:"))
+#   if(sayi>0):
+#     pozToplam += sayi
+#   elif(sayi==-1):
+#     break
+# print("Toplam =",pozToplam)
 
 
 # https://github.com/
 # https://desktop.github.com/
 # Github Test
+
+# Kullanıcıdan sayı adedi isteyip o kadar sayı alınaarak.
+# Sayıların karelerini toplayıp ekrana yazdırın.
+# kareToplam = 0
+# try:
+#   adet = int(input("Kaç sayı girilsin: "))
+# except:
+#   print("Hatalı veri girişi !!!")
+
+# i = 1
+# while(i<=adet):
+#   try:
+#     sayi = int(input("s : "))
+#     kareToplam += (sayi**2)
+#     i += 1
+#   except:
+#     print("girilen sayı hatalı !!!")
+
+# print("kareler toplamı : ",kareToplam)
+
+  
+# from random import randint
+# rastGele = randint(0,100)
+# print(rastGele)
+
+# Rastgele üretilen sayıyı bulma oyunu. (0-100 aralığında)
+# Kullanıcının başlangıçta 1000 puanı var.
+# Her başarısız tahminde 50 puan azalacak.
+# Eşitse puan ekrana yazdırılarak program sonlanacak.
+# Opsiyonel: tahminden sonra yukarı aşağı yönlendirme yapılsın.
+
+
+rastgele = randint(0,100)
+puan = 1000
+while(True):
+  try:
+    tahmin = int(input("tahmin : "))
+  except:
+    print("Hatalı veri girişi !!!")
+    break
+
+  if(tahmin==rastgele):
+    print(f"Tebrikler buldunuz sayı {rastgele} idi.Puanınız: {puan}")
+  else:
+    puan -= 50
+    if(tahmin>rastgele):
+      print("Daha küçük !!!")
+    else:
+      print("Daha büyük !!!")
+  
+
+
