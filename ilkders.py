@@ -1,0 +1,1 @@
+print(("Bu metin Python ile not defterinde metinlmıştır."))
