@@ -145,23 +145,47 @@ from random import randint
 # Opsiyonel: tahminden sonra yukarı aşağı yönlendirme yapılsın.
 
 
-rastgele = randint(0,100)
-puan = 1000
-while(True):
-  try:
-    tahmin = int(input("tahmin : "))
-  except:
-    print("Hatalı veri girişi !!!")
-    break
+# rastgele = randint(0,100)
+# puan = 1000
+# while(True):
+#   try:
+#     tahmin = int(input("tahmin : "))
+#   except:
+#     print("Hatalı veri girişi !!!")
+#     break
 
-  if(tahmin==rastgele):
-    print(f"Tebrikler buldunuz sayı {rastgele} idi.Puanınız: {puan}")
-  else:
-    puan -= 50
-    if(tahmin>rastgele):
-      print("Daha küçük !!!")
-    else:
-      print("Daha büyük !!!")
-  
+#   if(tahmin==rastgele):
+#     print(f"Tebrikler buldunuz sayı {rastgele} idi.Puanınız: {puan}")
+#   else:
+#     puan -= 50
+#     if(tahmin>rastgele):
+#       print("Daha küçük !!!")
+#     else:
+#       print("Daha büyük !!!")
 
+# Sayı iste.
+# Çıkmak istiyor musunuz?(evet/hayır): (evet ise sonraki adıma geç hayır ise tekrar sayı istemek üzere döngü başına git)
+# evet cevabından sonra girilen tüm sayıların çarpımını ekrana yaz.
+
+# carpim = 1
+# while(True):
+#   sayi = int(input("sayı:"))
+#   carpim *= sayi
+#   cevap = input("Çıkmak istiyor musunuz?(evet/hayır):")
+#   if(cevap.lower()=="evet" or cevap.lower()=="e"):
+#     break
+
+# print(f"Girilen sayıların çarpımı : {carpim}")
+
+# 1-100 arasındaki sayıların toplayan program. Ancak aşağıdaki durumlarda sayıyı toplama eklemeyecek.
+# Sayı 7'nin katı ise toplama eklenmesin.
+toplam = 0
+i = 1
+while(i<=100):  # i 100 den küçük eşit olduğu sürece çalışsın.
+  if(i%7!=0):   # i nin 7 ye bölümünden kalan 0 değilse
+    toplam += i # i yi toplama ekle
+  i+=1          # i yi 1 artır. 
+print(f"Toplam : {toplam}")
+
+    
 
