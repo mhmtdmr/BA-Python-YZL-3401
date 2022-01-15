@@ -34,13 +34,13 @@ range(1,9,3)  # 1,4,7     # range(başl.,bitiş,artış)
 # for döngüsü ile yazınız.
 # format=> "sayı: 5 karesi: 25 "
 
-# try:
-#   limit = int(input("sınır:"))
-# except:
-#   print("Hatalı veri girişi !")
+try:
+  limit = int(input("sınır:"))
+except:
+  print("Hatalı veri girişi !")
 
-# for i in range(1,limit+1):
-#   print(f"sayı: {i} karesi: {i**2}")
+for i in range(1,limit+1):
+  print(f"sayı: {i} karesi: {i**2}")
 
 
 # https://codeshare.io/BA303
@@ -62,11 +62,11 @@ range(1,9,3)  # 1,4,7     # range(başl.,bitiş,artış)
 # 0 1 0 1 0 0 0 1 => ASCII a
 
 # SORU: Kullanıcıdan 10 sayı alıp bu sayılardan tek olanları toplayp toplamı ekrana yazdıran programı yazınız.
-# toplam = 0
-# for i in range(10):
-#   s = int(input("sayı:"))
-#   if(s%2==1):     # sayının 2 ye bölümünden kalan 1 ise
-#     toplam +=s    # toplama ekle.
+toplam = 0
+for i in range(10):
+  s = int(input("sayı:"))
+  if(s%2==1):     # sayının 2 ye bölümünden kalan 1 ise
+    toplam +=s    # toplama ekle.
 
 # print(toplam)
 
