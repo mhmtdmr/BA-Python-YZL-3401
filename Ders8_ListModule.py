@@ -79,11 +79,11 @@ if(__name__=='__main__'):
     # sayiListesi = [10,20,30]
     # print(ListeOrtalama(sayiListesi))
 
-    # print(Topla(3))
-    # print(Topla(3,4))
-    # print(Topla(3,4,5))
-    # print(Topla(3,4,5,6))
-    # print(Topla(3,4,5,6,7))
+    print(Topla(3))
+    print(Topla(3,4))
+    print(Topla(3,4,5))
+    print(Topla(3,4,5,6))
+    print(Topla(3,4,5,6,7))
 
     # print(SayilarOrtalama(12,24,36))
     # print(SayilarOrtalama(12,24,36,48))

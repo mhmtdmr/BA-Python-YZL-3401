@@ -62,20 +62,20 @@
 # sonucu döndüren metodu yazınız.
 # Örnek: islemYap(4,5,"+") => 20,islemYap(4,5,"*") => 9
 
-# def IslemYap(sayi1,sayi2,islem):
-#     if(islem=='+'):
-#         print(sayi1+sayi2)
-#     elif(islem=='-'):
-#         print(sayi1-sayi2)
-#     elif(islem=='*'):
-#         print(sayi1*sayi2)
-#     elif(islem=='/'):
-#         print(sayi1/sayi2)
+def IslemYap(sayi1,sayi2,islem):
+    if(islem=='+'):
+        print(sayi1+sayi2)
+    elif(islem=='-'):
+        print(sayi1-sayi2)
+    elif(islem=='*'):
+        print(sayi1*sayi2)
+    elif(islem=='/'):
+        print(sayi1/sayi2)
     
-# IslemYap(4,5,'+')
-# IslemYap(4,5,'-')
-# IslemYap(4,5,'*')
-# IslemYap(4,5,'/')
+IslemYap(4,5,'+')
+IslemYap(4,5,'-')
+IslemYap(4,5,'*')
+IslemYap(4,5,'/')
 
 ### Kullanıcı sayı girdiği sürece girilen sayıları toplayan programı yazınız.
 ## Kullanıcıya "sayı giriniz(çıkmak için Ç yazınız):"" uyarısı gelecek. Metod adı: CokluSayiGir()

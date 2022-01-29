@@ -27,11 +27,21 @@ def Kuvvet(taban,us):
 
 # print(__name__) # bu dosyadan çalıştığında: __main__
                 # import edilmiş başka dosyadan çalıştığında: Ders8_Matematik
+def return3Number():
+    return 1,2,3
 
 if(__name__=='__main__'):         
-    kontrol = SayiAl()
-    print("Dosya buradan çalıştırıldı.")
+    # kontrol = SayiAl()
+    # print("Dosya buradan çalıştırıldı.")
 
     # Kare isminde bir metod tanımlayın. kendisine gönderilen sayının karesini döndürsün.
 
     # Kuvvet isminde bit metod tanımlayın. Kendisine gödnerilen 2 sayıya göre kuvvet alsın.Örn: Kuvvet(2,3) => 8
+
+    # sonuc = Topla(11,22)
+    # print(sonuc)
+
+    # a,b,c = return3Number()
+    # a=1
+    # b=2
+    # c=3
