@@ -33,16 +33,6 @@ def LogDirectoryBuilder() -> bool:
     else:
         return True
 
-
-
-
-
-
-
-
-
-
-
 # Dosya içerisine aşağıdaki formatta yazma yapacak metodu yazınız.
 
 # Metot: LogWriter(event:str)
@@ -50,6 +40,12 @@ def LogDirectoryBuilder() -> bool:
 # Zaman Damgası             Olay
 # 13:28:00___29-01-2022     Kullanıcı Giriş yaptı.
 # print(datetime.now().strftime("%H:%M:%S___%d-%m-%Y"))
+
+
+def LogWriter(event:str):
+    if(LogDirectoryBuilder()==True):
+        # ...
+        print("Klasör mevcut")
 
 
 if(__name__=="__main__"):
