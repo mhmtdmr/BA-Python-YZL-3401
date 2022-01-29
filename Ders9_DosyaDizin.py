@@ -1,6 +1,6 @@
 from datetime import datetime
 from importlib import import_module
-from os import open,listdir,getcwd,mkdir,chdir,path,rmdir
+from os import makedirs, open,listdir,getcwd,mkdir,chdir,path,rmdir
 
 
 
@@ -88,14 +88,15 @@ isimByte = str.encode("Ahmet Demir\n") # string'i byte array e dönüştürdük.
 os.write(dosya,isimByte)
 os.close(dosya)
 
-# AŞağıdaki formatta dosyaya yazma işlemini metot olarak yazınız.
+
+# Aşağıdaki formatta dosyaya yazma işlemini metot olarak yazınız.
 
 # Metot: LogDirectoryBuilder()
 #########################################################
 # Dosya-Klasör Yapısı :=>    LOG/YIL/AY/gunSayisi_log.txt
-#                            LOG/2022/1/29_log.txt
+                         LOG/2022/1/29_log.txt
+from os makedirs()
 
-# Metotları yukarıdaki klasörler yoksa oluşturulacak şekilde tanımlayın.
 
 # Dosya içerisine aşağıdaki formatta yazma yapacak metodu yazınız.
 
