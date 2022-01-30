@@ -89,23 +89,6 @@ os.write(dosya,isimByte)
 os.close(dosya)
 
 
-# Aşağıdaki formatta dosyaya yazma işlemini metot olarak yazınız.
-
-# Metot: LogDirectoryBuilder()
-#########################################################
-# Dosya-Klasör Yapısı :=>    LOG/YIL/AY/gunSayisi_log.txt
-                         LOG/2022/1/29_log.txt
-from os makedirs()
-
-
-# Dosya içerisine aşağıdaki formatta yazma yapacak metodu yazınız.
-
-# Metot: LogWriter(event:str)
-#####################################################
-# Zaman Damgası             Olay
-# 13:28:00___29-01-2022     Kullanıcı Giriş yaptı.
-print(datetime.now().strftime("%H:%M:%S___%d-%m-%Y"))
-
 
 
 

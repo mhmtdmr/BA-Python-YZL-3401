@@ -1,0 +1,7 @@
+zaman				olay
+-----				----
+10:58:18___30-01-2022		Test
+10:59:26___30-01-2022		Dosya yazma metotları tanımlandı.
+11:00:08___30-01-2022		Bu dosyayı kapatıyorum.
+13:12:13___30-01-2022		HATA : Tanımlanmamış bir değişken kullanılmaya çalıştı!
+13:14:34___30-01-2022		HATA : Sıfıra bölme hatası!
