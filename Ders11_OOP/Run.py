@@ -42,43 +42,58 @@ if __name__=="__main__":
 
 
     # SInıf özelliklerine örnekler.
-    print(Student.ClassCoder) 
-    print(Student.ClassDetail)
+    # print(Student.ClassCoder) 
+    # print(Student.ClassDetail)
 
     # UPDATE
     student3.Email = "ahmet@gurcan.net"
     student3.PhoneNumber = "02161112233"
-    print()
-    print()
+    # print()
+    # print()
 
     print(Student.db)
     student3.Update()       # Nesne metotları  
-    print()
-    print()
-    print(Student.db)
-    print()
-    print()
+    # print()
+    # print()
+    # print(Student.db)
+    # print()
+    # print()
 
     student2.FullName = "Merve Sena CÜCELİ"
     student2.Update()       # Nesne metotları  
     print()
     print()
-    print(Student.db)
+    # print(Student.db)
 
 
-    # # # DELETE
-    student2.Delete()       # Nesne metotları  
-    print()
-    print()
-    print(Student.db)
+    # # # # DELETE
+    # student2.Delete()       # Nesne metotları  
+    # print()
+    # print()
+    # print(Student.db)
 
-    # Sınıf metotları , @classmethod: Nesneye gerek kalmadan kullanılabilir.!!!
-    Student.DeleteByNumber(3)
-    print()
-    print(Student.db)
+    # # Sınıf metotları , @classmethod: Nesneye gerek kalmadan kullanılabilir.!!!
+    # Student.DeleteByNumber(3)
+    # print()
+    # print(Student.db)
+
+    # Student.Search(fullname="Ahmet")
+    
+    # ogrenci = Student()
+    # print(ogrenci.topla(5,6))
+
+
+
+
+    # Adı Jane Doe olanları bul!
+    myStudents = Student.Search(fullname="Jane Doe",email="ahmet@gurcan.net")
+    
+    # print(Student.db)
+    # print(myStudents)
     
 
 
+    Student.PrintStudentsCount()
 
 
 
