@@ -16,6 +16,5 @@ class User:
         if(newPassword.isalpha()):
             print("FALSE")
             return False
-        print("TRUE")
         return True
 

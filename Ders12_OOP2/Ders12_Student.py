@@ -14,7 +14,7 @@ class Student:
     
     # instance method
     def GetAge(self):
-        year = datetime.now().date()
+        year = datetime.now().year
         age = year - self.Birthday.year
         return age
 
