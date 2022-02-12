@@ -24,6 +24,20 @@ class Otomobil(Arac):
         self.KapiSayisi = kapiSayisi
         self.KasaTipi = kasaTipi
 
+    
+    def BilgiYaz(self):
+        print(f"""       ARAÇ BİLGİLERİ
+        Marka:\t\t{self.Marka}
+        Seri:\t\t{self.Seri}
+        Model:\t\t{self.Model}
+        Motor Hacmi:\t{self.MotorHacmi}
+        Renk:\t\t{self.Renk}
+        Model Yili:\t{self.ModelYili}
+        Kapı Sayısı:\t{self.KapiSayisi}
+        Kasa Tipi:\t{self.KasaTipi}
+        Vergi:\t\t{self.VergiHesapla()} ₺
+        """)
+
 
 
 
