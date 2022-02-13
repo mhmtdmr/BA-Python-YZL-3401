@@ -9,7 +9,7 @@ class Ilan:
     def __init__(self,baslik:str="",aciklama:str="",tarih:datetime=datetime.now()) -> None:
         self.Baslik = baslik
         self.Aciklama = aciklama
-        self.Tarih = tarih
+        self.Tarih:datetime = tarih
 
     def BilgiYaz(self):
         print(f"""\t\tIlan Bilgileri

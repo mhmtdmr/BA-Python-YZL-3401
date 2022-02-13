@@ -6,8 +6,8 @@ class OtomobilIlan():
     Bu sınıf Otomobil ilanı vermekte kullanacağımız alt sınıftır.
     """
     def __init__(self,oto:Otomobil=None,ilan:Ilan=None) -> None:
-        self.Otomobil = oto
-        self.Ilan = ilan
+        self.Otomobil:Otomobil = oto
+        self.Ilan:Ilan = ilan
 
     def Yaz(self):
         self.Ilan.BilgiYaz()
