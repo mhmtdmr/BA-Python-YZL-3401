@@ -8,7 +8,7 @@ class CRUD:
         pass
 
     @abstractstaticmethod
-    def Read(obj):
+    def Read():
         pass
 
     @abstractstaticmethod

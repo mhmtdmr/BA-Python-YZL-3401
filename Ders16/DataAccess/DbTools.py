@@ -4,6 +4,7 @@ import sqlite3
 class DbTools:
     """This is a base class for database works. It provides connection and disconnection to database: firstdb."""
     db = object()
+    __dbName = "C:\\Users\\Bilge Adam\\Desktop\\BA-Python-YZL-3401\\Ders16\\firstdb.db"
 
     def __init__(self) -> None:
         pass
@@ -14,11 +15,12 @@ class DbTools:
         """This method provides database connection to firstdb."""
         try:
             global db
-            db = sqlite3.connect("C:\\Users\\Bilge Adam\\Desktop\\BA-Python-YZL-3401\\Ders16\\firstdb.db")
+            db = sqlite3.connect(DbTools.__dbName)
             print("Connection successfull!")
         except Exception as error:
             print("Could not connect to database!")
             print(error)
+        return db
     
     @staticmethod
     def DisconnectDB():
