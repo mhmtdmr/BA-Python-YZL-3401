@@ -1,9 +1,10 @@
 import sqlite3 
 # veritabanı işlemleri için kullanacağımız kütüphane
+# Farklı sınıflar için veritabanı işlemi yapacak olsak da bu dosyayı kullanacağız.
 
 class DbTools:
     """This is a base class for database works. It provides connection and disconnection to database: firstdb."""
-    db = object()
+    db = None       # bu nesne nin amacı bağlantıya bu seviyeden ulaşmak burada tanımladık. global !.
     __dbName = "C:\\Users\\Bilge Adam\\Desktop\\BA-Python-YZL-3401\\Ders16\\firstdb.db"
 
     def __init__(self) -> None:
@@ -13,9 +14,10 @@ class DbTools:
     @staticmethod
     def ConnectDB():
         """This method provides database connection to firstdb."""
+
+        global db
         try:
-            global db
-            db = sqlite3.connect(DbTools.__dbName)
+            db = sqlite3.connect(DbTools.__dbName)      # veritabanı bağlantısını aç!
             print("Connection successfull!")
         except Exception as error:
             print("Could not connect to database!")
@@ -25,8 +27,10 @@ class DbTools:
     @staticmethod
     def DisconnectDB():
         """This method disconnects firstdb."""
+
+        global db
         try:
-            db.close()
+            db.close()     # veritabanı bağlantısını kapat!
             print("Disconnection successfull!")
         except Exception as error:
             print("Could not disconnect database!")
