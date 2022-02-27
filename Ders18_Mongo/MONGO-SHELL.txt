@@ -1,0 +1,151 @@
+sdudents collection
+-------------------
+{
+    "_id": 999,
+    "ad": "Ayşe",
+    "soyad": "İstanbullu",
+    "notlar": {
+        "matematik": 40,
+        "kimya": 75,
+        "edebiyat": 70,
+        "tarih": 79
+    }
+}
+
+{
+    "_id": {
+        "$oid": "61bf5a3efc96980742eb9088"
+    },
+    "ad": "Kemal",
+    "soyad": "Hazin",
+    "yas": 44,
+    "notlar": {
+        "matematik": 95,
+        "kimya": 75,
+        "edebiyat": 70,
+        "tarih": 79
+    }
+}
+
+Başlat -> cmd  // Komut satırını açtık.
+
+cd C:\Program Files\MongoDB  // mongosh klasörüne gittik.
+
+mongosh // mongo shell i açtık.
+
+show dbs // Veritabanlarını liste 
+
+use DersDB // veri tabanını oluşturduk. adı: DersDB
+
+db.students.insertOne({ad:"Ünsal",soyad:"Erkal"}) // students keloksyionuna 1 dosya ekledik.
+
+show dbs
+show collections // koleksiyonları listeledik.
+
+db.students.find() students koleksiyonundaki dosyalları listeledik.
+
+db.students.insertMany([{ad:"Leman",soyad:"M."},{ad:"Furkan"}]) // Çoklu kayıt/dosya ekledik.
+
+db.students.find().count() dosya sayısını/kayıt sayısını getirdik.
+
+db.students.find({ad:"Ünsal"}) // adı Ünsal olanları listeledik.
+
+db.students.updateOne({_id:999},{$set:{soyad:"Giresunlu"}}) // güncelleme yaptık.
+
+db.students.find({_id:999}) 
+
+
+db.students.deleteOne({_id:999}) // _id si 999 olanı sildik.
+
+db.students.update({ad:"Ali"},{$set:{kimyanotlar:[50,70,45]}}) // adı Ali olan dosyaya 
+yeni alan ekledik.
+
+db.students.update({ numara: 432 }, { $push: { kimyanotlar: 20 } })
+// 432 numaralı alandaki kimyanotlar dizisine ekleme yaptık.
+
+db.students.find({yas:{"$gt":40}})  // filtreleme işlemleri.
+
+db.students.find({yas:{"$eq":45}})
+
+db.students.find({yas:{"$lt":45}})
+
+db.students.find({ad:/.*Al.*/}) // adında Al geçenleri listele
+
+db.students.find({ad:/^M/}) // M ile başlayanlar
+
+db.students.find({ ad: /m/ }) // içerisinde m olanlar.
+
+
+db.students.find({ soyad: /ik$/ }) // soyadı ik ile bitenler.
+
+// adı Kemal veya Ali olanları listele. Koşullardan 1 tanesinin sağlanması yeterli.
+
+db.students.find({"$or":[{"ad":"Kemal","ad":"Ali"}]})
+
+// adı Kemal ve soyadı Naçar olanları listele. 2 koşulda sağlanmalı!!!
+db.students.find({"$and":[{"ad":"Kemal"},{"soyad":"Naçar"}]})
+
+öğrencilerden matematik notu 90 olanları listele
+db.students.find({"notlar.matematik":90})
+
+öğrencilerden matematik notu 90 dan küçük olanları listele
+db.students.find({"notlar.matematik": {"$lt":90}})
+edebiyat notu 70 olanları listele.
+
+db.students.find({"notlar.edebiyat": {"$eq":70}})
+
+
+### JSON FORMATINDA IMPORT EXPORT
+
+mongoimport.exe --host 127.0.0.1 --db sample_training --drop ..\backup\sample_training\trips.json
+
+mongoimport.exe --host 127.0.0.1 --db sample_training --drop ..\backup\sample_training\grades.json
+
+mongoimport.exe --host 127.0.0.1 --db sample_airbnb --drop ..\backup\sample_airbnb\listingsAndReviews.json
+
+>mongoexport.exe --host 127.0.0.1:27017 --db DersDB --collection students --out  ..\backup\DersDB\students.json
+
+
+BSON FORMATINDA BACKUP RESTORE
+
+mongodump.exe --host 127.0.0.1 --db DersDB
+mongodump.exe --host 127.0.0.1 --db DersDB --out ..\\backup\DersDBdump
+
+mongorestore.exe --host 127.0.0.1 --db DersDB --drop dump\DersDB\
+
+
+mongodb://mehmet:1234@localhost:27017
+
+
+
+
+
+
+
+
+
+
+filtreleme
+{"amenities":"Shampoo"] içinde Shampoo elemanını içeren dizi veya başka eleman varsa döndürür.
+{"amenities":["Shampoo"]} Sadece Shampoo elemanını içeren dizi varsa döndürür.
+{"amenities":{"$all":["Shampoo"]}} içinde Shampoo olan dizileri döndürür. Sadece dizilerde arama yapar
+{"amenities":{"$size":20}} sadece 20 amenities olanları listeler.
+
+{"amenities":{"$all":["Internet","Wifi","Kitchen","Heating"]}}
+
+
+# Kolonları göster/gizle
+
+# 1 olursa sadece bu kolonları gösterir. Dipğerlerini göstermez!
+db.listingsAndReviews.findOne({},{"_id":1,"beds":1,"host":1})
+
+# 0 olanları göstermez diğerlerini gösterir
+db.listingsAndReviews.findOne({},{"_id":0,"beds":0,"host":0})
+
+# yatak sayısı 2 olanların id yatak sayısı ve host bilgilerini göster.
+db.listingsAndReviews.find({"beds":2},{"_id":1,"beds":1,"host":1}).pretty()
+
+
+# name anahtarında Rio geçen dosyaların sadece name özelliklerini listele.
+db.listingsAndReviews.find({"name":{"$regex":"Rio"}},{"_id":0,"name":1}).pretty()
+

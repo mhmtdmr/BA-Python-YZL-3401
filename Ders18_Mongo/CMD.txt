@@ -1,0 +1,473 @@
+C:\Program Files\MongoDB\Server\5.0\bin>cd C:\Program Files\MongoDB\Server\5.0\bin
+
+C:\Program Files\MongoDB\Server\5.0\bin>mongosh
+Current Mongosh Log ID: 621b2c2482d0574881987781
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000
+Using MongoDB:          5.0.4
+Using Mongosh:          1.1.7
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting:
+   2022-02-24T15:37:45.595+03:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+Warning: Found ~/.mongorc.js, but not ~/.mongoshrc.js. ~/.mongorc.js will not be loaded.
+  You may want to copy or rename ~/.mongorc.js to ~/.mongoshrc.js.
+test> show dbs
+DersDB           73.7 kB
+admin              41 kB
+config           73.7 kB
+local            90.1 kB
+mydb              131 kB
+sample_airbnb    54.7 MB
+sample_training   8.7 MB
+test> use FirstDB
+switched to db FirstDB
+FirstDB> show collections
+
+FirstDB> show dbs
+DersDB           73.7 kB
+admin              41 kB
+config           73.7 kB
+local            90.1 kB
+mydb              131 kB
+sample_airbnb    54.7 MB
+sample_training   8.7 MB
+FirstDB> db.firstCollection.insertOne({name:"John",surname:"Mikel"})
+Browserslist: caniuse-lite is outdated. Please run:
+npx browserslist@latest --update-db
+
+Why you should do it regularly:
+https://github.com/browserslist/browserslist#browsers-data-updating
+{
+  acknowledged: true,
+  insertedId: ObjectId("621b2d02814709558b06bead")
+}
+FirstDB> show dbs
+DersDB           73.7 kB
+FirstDB          8.19 kB
+admin              41 kB
+config            111 kB
+local            90.1 kB
+mydb              131 kB
+sample_airbnb    54.7 MB
+sample_training   8.7 MB
+FirstDB> show collections
+firstCollection
+FirstDB> db.firstCollection.find()
+[
+  {
+    _id: ObjectId("621b2d02814709558b06bead"),
+    name: 'John',
+    surname: 'Mikel'
+  }
+]
+FirstDB> db.firstCollection.insertOne({name:"Jane",surname:"Mikel"})
+{
+  acknowledged: true,
+  insertedId: ObjectId("621b2d71814709558b06beae")
+}
+FirstDB> db.firstCollection.find()
+[
+  {
+    _id: ObjectId("621b2d02814709558b06bead"),
+    name: 'John',
+    surname: 'Mikel'
+  },
+  {
+    _id: ObjectId("621b2d71814709558b06beae"),
+    name: 'Jane',
+    surname: 'Mikel'
+  }
+]
+FirstDB>
+FirstDB> show dbs
+DersDB           73.7 kB
+FirstDB          8.19 kB
+admin              41 kB
+config            111 kB
+local            90.1 kB
+mydb              131 kB
+sample_airbnb    54.7 MB
+sample_training   8.7 MB
+
+FirstDB> show collections
+firstCollection
+FirstDB> db.firstCollection.find()
+[
+  {
+    _id: ObjectId("621b2d02814709558b06bead"),
+    name: 'John',
+    surname: 'Mikel'
+  },
+  {
+    _id: ObjectId("621b2d71814709558b06beae"),
+    name: 'Jane',
+    surname: 'Mikel'
+  }
+]
+FirstDB> db.secondCollection.insertMany([{lessonName:"Mathemathic",totalhours:80},{lessonName:"Biology",totalhours:50}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("621b301d814709558b06beaf"),
+    '1': ObjectId("621b301d814709558b06beb0")
+  }
+}
+FirstDB> db.secondCollection.find()
+[
+  {
+    _id: ObjectId("621b301d814709558b06beaf"),
+    lessonName: 'Mathemathic',
+    totalhours: 80
+  },
+  {
+    _id: ObjectId("621b301d814709558b06beb0"),
+    lessonName: 'Biology',
+    totalhours: 50
+  }
+]
+FirstDB> show collections
+firstCollection
+secondCollection
+
+FirstDB> db.firstCollection.find()
+[
+  {
+    _id: ObjectId("621b2d02814709558b06bead"),
+    name: 'John',
+    surname: 'Michael'
+  },
+  {
+    _id: ObjectId("621b2d71814709558b06beae"),
+    name: 'Jane',
+    surname: 'Mikel'
+  },
+  {
+    _id: ObjectId("621b36be7bcaf6d5e353d795"),
+    name: 'Serkan',
+    surname: 'Ay',
+    age: 43,
+    title: 'IT Manager',
+    lastUpdate: Timestamp({ t: 1645950728, i: 1 })
+  },
+  {
+    _id: ObjectId("621b3972814709558b06beb1"),
+    name: 'Serkan',
+    surname: 'Demir'
+  }
+]
+FirstDB> db.firstCollection.updateOne({name:"Serkan"},{$set:{surname:"KARAÇALI"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+FirstDB> db.firstCollection.find()
+[
+  {
+    _id: ObjectId("621b2d02814709558b06bead"),
+    name: 'John',
+    surname: 'Michael'
+  },
+  {
+    _id: ObjectId("621b2d71814709558b06beae"),
+    name: 'Jane',
+    surname: 'Mikel'
+  },
+  {
+    _id: ObjectId("621b36be7bcaf6d5e353d795"),
+    name: 'Serkan',
+    surname: 'KARAÇALI',
+    age: 43,
+    title: 'IT Manager',
+    lastUpdate: Timestamp({ t: 1645950728, i: 1 })
+  },
+  {
+    _id: ObjectId("621b3972814709558b06beb1"),
+    name: 'Serkan',
+    surname: 'Demir'
+  }
+]
+FirstDB> db.firstCollection.updateMany({name:"Serkan"},{$set:{surname:"KARAÇALI"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+FirstDB> db.firstCollection.find()
+[
+  {
+    _id: ObjectId("621b2d02814709558b06bead"),
+    name: 'John',
+    surname: 'Michael'
+  },
+  {
+    _id: ObjectId("621b2d71814709558b06beae"),
+    name: 'Jane',
+    surname: 'Mikel'
+  },
+  {
+    _id: ObjectId("621b36be7bcaf6d5e353d795"),
+    name: 'Serkan',
+    surname: 'KARAÇALI',
+    age: 43,
+    title: 'IT Manager',
+    lastUpdate: Timestamp({ t: 1645950728, i: 1 })
+  },
+  {
+    _id: ObjectId("621b3972814709558b06beb1"),
+    name: 'Serkan',
+    surname: 'KARAÇALI'
+  }
+]
+FirstDB> db.firstCollection.updateMany({name:"Serkan"},{$set:{surname:"KARAÇ"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+FirstDB> db.firstCollection.find()
+[
+  {
+    _id: ObjectId("621b2d02814709558b06bead"),
+    name: 'John',
+    surname: 'Michael'
+  },
+  {
+    _id: ObjectId("621b2d71814709558b06beae"),
+    name: 'Jane',
+    surname: 'Mikel'
+  },
+  {
+    _id: ObjectId("621b36be7bcaf6d5e353d795"),
+    name: 'Serkan',
+    surname: 'KARAÇ',
+    age: 43,
+    title: 'IT Manager',
+    lastUpdate: Timestamp({ t: 1645950728, i: 1 })
+  },
+  {
+    _id: ObjectId("621b3972814709558b06beb1"),
+    name: 'Serkan',
+    surname: 'KARAÇ'
+  }
+]
+FirstDB> db.firstCollection.updateMany({name:"Serkan"},{$set:{address: {city:"İstanbul",town:"Kadıköy"}    }})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+FirstDB> db.firstCollection.find()
+[
+  {
+    _id: ObjectId("621b2d02814709558b06bead"),
+    name: 'John',
+    surname: 'Michael'
+  },
+  {
+    _id: ObjectId("621b2d71814709558b06beae"),
+    name: 'Jane',
+    surname: 'Mikel'
+  },
+  {
+    _id: ObjectId("621b36be7bcaf6d5e353d795"),
+    name: 'Serkan',
+    surname: 'KARAÇ',
+    age: 43,
+    title: 'IT Manager',
+    lastUpdate: Timestamp({ t: 1645950728, i: 1 }),
+    address: { city: 'İstanbul', town: 'Kadıköy' }
+  },
+  {
+    _id: ObjectId("621b3972814709558b06beb1"),
+    name: 'Serkan',
+    surname: 'KARAÇ',
+    address: { city: 'İstanbul', town: 'Kadıköy' }
+  }
+]
+FirstDB> db.firstCollection.find({_id:ObjectId("621b3972814709558b06beb1")})
+[
+  {
+    _id: ObjectId("621b3972814709558b06beb1"),
+    name: 'Serkan',
+    surname: 'KARAÇ',
+    address: { city: 'İstanbul', town: 'Kadıköy' }
+  }
+]
+FirstDB> db.firstCollection.find({_id:ObjectId("621b3972814709558b06beb1")}).address
+
+FirstDB> db.firstCollection.find({_id:ObjectId("621b3972814709558b06beb1")})
+[
+  {
+    _id: ObjectId("621b3972814709558b06beb1"),
+    name: 'Serkan',
+    surname: 'KARAÇ',
+    address: { city: 'İstanbul', town: 'Kadıköy' }
+  }
+]
+FirstDB> db.firstCollection.find({_id:ObjectId("621b3972814709558b06beb1")})[address]
+ReferenceError: address is not defined
+FirstDB> db.firstCollection.deleteOne({_id:ObjectId("621b3972814709558b06beb1")})
+{ acknowledged: true, deletedCount: 1 }
+
+
+
+FirstDB> db.firstCollection.deleteMany({name:"Serkan"})
+{ acknowledged: true, deletedCount: 1 }
+
+
+FirstDB> db.firstCollection.insertMany(  [ {name:"Tarık",surname:"Gürsoy",age:23,Name:"Murat" }, {name:"Ece",surname:"Güzelses" }, {name:"Salih",surname:"Koç",age:26,address:{city:"Çorum"} } ]   )
+
+
+
+
+
+
+
+
+FirstDB> db.firstCollection.find( { "$and":[ {"name":"Salih"},{age:26} ] } )
+[
+  {
+    _id: ObjectId("621b3c84814709558b06beb4"),
+    name: 'Salih',
+    surname: 'Koç',
+    age: 26,
+    address: { city: 'Çorum' }
+  }
+]
+FirstDB> db.firstCollection.find( { "$and":[ {"name":"Salih"},{age: { "$gte":25 }  } ] } )
+[
+  {
+    _id: ObjectId("621b3c84814709558b06beb4"),
+    name: 'Salih',
+    surname: 'Koç',
+    age: 26,
+    address: { city: 'Çorum' }
+  }
+]
+FirstDB> db.firstCollection.find( { "$or":[ {"name":"Salih"},{age: { "$gte":25 }  } ] } )
+[
+  {
+    _id: ObjectId("621b3c84814709558b06beb4"),
+    name: 'Salih',
+    surname: 'Koç',
+    age: 26,
+    address: { city: 'Çorum' }
+  }
+]
+FirstDB> db.firstCollection.find( { "$or":[ {"name":"Salih"},{age: { "$gte":22 }  } ] } )
+[
+  {
+    _id: ObjectId("621b3c84814709558b06beb2"),
+    name: 'Tarık',
+    surname: 'Gürsoy',
+    age: 23,
+    Name: 'Murat'
+  },
+  {
+    _id: ObjectId("621b3c84814709558b06beb4"),
+    name: 'Salih',
+    surname: 'Koç',
+    age: 26,
+    address: { city: 'Çorum' }
+  }
+]
+FirstDB> db.firstCollection.find( { "$and":[ {"name":"Salih"},{ "address.city":"Kayseri" } ] } )
+
+FirstDB> db.firstCollection.find( { "$and":[ {"name":"Salih"},{ "address.city":"Kayseri" } ] } )
+
+FirstDB> db.firstCollection.find( { "$or":[ {"name":"Salih"},{ "address.city":"Kayseri" } ] } )
+[
+  {
+    _id: ObjectId("621b3c84814709558b06beb4"),
+    name: 'Salih',
+    surname: 'Koç',
+    age: 26,
+    address: { city: 'Çorum' }
+  }
+]
+FirstDB> db.firstCollection.updateOne(
+
+{ _id: ObjectId("621b3c84814709558b06beb2") } , 
+
+{"$set":{address:{city:"Kayseri"}}}
+
+)
+
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+FirstDB> db.firstCollection.find( { "$or":[ {"name":"Salih"},{ "address.city":"Kayseri" } ] } )
+[
+  {
+    _id: ObjectId("621b3c84814709558b06beb2"),
+    name: 'Tarık',
+    surname: 'Gürsoy',
+    age: 23,
+    Name: 'Murat',
+    address: { city: 'Kayseri' }
+  },
+  {
+    _id: ObjectId("621b3c84814709558b06beb4"),
+    name: 'Salih',
+    surname: 'Koç',
+    age: 26,
+    address: { city: 'Çorum' }
+  }
+]
+
+
+
+
+
+
+-------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C:\Program Files\MongoDB\Server\5.0\bin>mongodump.exe 
+--host 127.0.0.1 --db FirstDB --collection secondCollection --out ..\backup\FirstDB_BSON\FirstDB_secondCollection.bson
+
+
+
+
+
