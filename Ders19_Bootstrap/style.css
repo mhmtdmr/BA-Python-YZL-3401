@@ -1,0 +1,57 @@
+body 
+{
+    background-color:aquamarine; 
+    padding: 25px;
+}
+
+p#firstp
+{
+    background-color: tomato;
+    padding: 2rem;
+}
+
+div
+{
+    border:0.2rem dashed #ce0368;
+    margin: 1rem;
+}
+
+/* id si videosection olan section ı seç */
+/* section#videosection, #videosection2   
+{
+    border:3px dashed #00864e;
+    background-color: blueviolet;
+} */
+
+.video  /* .(nokta) ile sınıf seçilebilir. */
+{
+    border:3px dashed #00864e;
+    background-color: blueviolet;
+}
+
+section
+{
+    background-color:#d49977;
+    margin: 1rem;
+}
+
+section
+{
+    background-color: #ce0368;
+}
+
+span 
+{
+    border:3px dashed #df7e00;
+}
+* 
+{
+    margin: 1rem;
+}
+
+
+
+#sirinler
+{
+    background-image: url("https://www.ozenduvarkagidi.com.tr/images/urunler/100_cocuk-182-7407_1.jpg") ;
+}
