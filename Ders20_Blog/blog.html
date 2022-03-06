@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+
+    <style>
+        main{
+            margin-top: 4px;
+            margin-bottom: 4px;
+        }
+        #middle
+        {
+            margin: 0;
+            /* height: 450px; */
+        }
+        #top
+        {
+            /* min-height: 250px; */
+        }
+        #middle-left
+        {
+            /* background-color: #a82064;  */
+            /* height:450px; */
+            padding: 0;
+        }
+        #middle-right
+        {
+            background-color: #e2e2e2; 
+            /* height:450px; */
+            padding: 1rem;
+            margin: 0;
+        }
+        #bottom
+        {
+            height: 120px;
+        }
+        #slider
+        {
+            /* height: 200px; */
+        }
+        #navbar
+        {
+            /* min-height: 50px; */
+        }
+        .kutu3lu
+        {
+            justify-content: space-around;
+        }
+        .card a /*  class ı card olan elementlerin altındaki a lara uygula. */
+        {
+            width: 100%;
+        }
+        .col,.col-sm-2,.col-sm-3,.col-sm-10,.col-sm-4,.col-sm-8
+        {
+            padding: 0;
+            margin: 0;
+        }
+        
+        #tags span
+        {
+            background-color: tomato;
+            padding: 2px;
+            border-radius: 5px;
+            color: rgb(71, 2, 37);
+        }
+        
+
+        @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+            [class*="col-"] {
+                width: 100%;
+            }
+            #middle-left
+            {
+                display: none;
+            }
+            .kutu3lu
+            {
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container"> <!-- Bootstrap yapısnı barındıran ana element. -->
+        <section id="top" class="bg-primary">
+            <section id="navbar" class="bg-white">
+
+                <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+                <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                          </div>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                      </ul>
+                      <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                      </form>
+                    </div>
+                  </nav>
+
+            </section>
+        </section>
+
+
+        <section id="middle" class="row p-3 bg-light">
+            <section class="col-sm-4">
+                <img src="https://www.webtekno.com/images/editor/default/0002/17/d8b936d913c4b0e679068500661b039dd573a48a.jpeg" style="width:100%; padding: 10px;
+                background-color: cadetblue;">
+            </section>
+
+            <section class="col-sm-8 p-3" style="background-color: rgb(185, 226, 253);">
+                <h3>Başlık</h3>
+                <hr>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi praesentium rem maxime odit aut perspiciatis ducimus, mollitia earum, sapiente, modi atque? At maxime quisquam eligendi aspernatur iste nisi aperiam recusandae.    
+                </p>
+                <hr>
+                <section id="tags">
+                    <span>tag1</span>
+                    <span>tag2</span>
+                    <span>tag3</span>
+                    <span>tag4</span>
+                </section>
+            </section>
+        </section>
+
+        <section id="bottom" class="bg-dark">
+        
+        </section>
+
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
