@@ -1,0 +1,18 @@
+<h1>
+    Merhaba
+</h1>
+
+{% if sehir %}
+    <p>{{sehir}}</p>
+{% endif %}
+
+<p>{{ilce}}</p>
+<p>{{mahalle}}</p>
+
+<hr>
+{% if news %}
+    {% for n in news %}
+        <h1> {{ n.NewsTitle }} </h1>
+        <p> {{ n.NewsBody }} </p>
+    {% endfor %}
+{% endif %}

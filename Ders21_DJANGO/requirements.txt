@@ -1,0 +1,12 @@
+# python -m venv env
+# env\scripts\activate
+# pip install django
+# cd ProjeKlasörü
+# django-admin createproject Blog
+# cd Blog
+# manage.py startproject Post
+
+Django
+Pillow
+django-imagekit
+

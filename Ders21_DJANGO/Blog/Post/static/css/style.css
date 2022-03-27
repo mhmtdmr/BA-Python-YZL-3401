@@ -1,0 +1,82 @@
+    main {
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+    #middle {
+      margin: 0;
+      /* height: 450px; */
+    }
+
+    #top {
+      /* min-height: 250px; */
+    }
+
+    #middle-left {
+      /* background-color: #a82064;  */
+      /* height:450px; */
+      padding: 0;
+    }
+
+    #middle-right {
+      background-color: #e2e2e2;
+      /* height:450px; */
+      padding: 1rem;
+      margin: 0;
+    }
+
+    #bottom {
+      height: 120px;
+    }
+
+    #slider {
+      /* height: 200px; */
+    }
+
+    #navbar {
+      /* min-height: 50px; */
+    }
+
+    .kutu3lu {
+      justify-content: space-around;
+    }
+
+    .card a
+
+    /*  class ı card olan elementlerin altındaki a lara uygula. */
+      {
+      width: 100%;
+    }
+
+    .col,
+    .col-sm-2,
+    .col-sm-3,
+    .col-sm-10 {
+      padding: 0;
+      margin: 0;
+    }
+
+    #tags span
+    {
+        background-color: tomato;
+        padding: 2px;
+        border-radius: 5px;
+        color: rgb(71, 2, 37);
+    }
+
+    @media only screen and (max-width: 768px) {
+
+      /* For mobile phones: */
+      [class*="col-"] {
+        width: 100%;
+      }
+
+      #middle-left {
+        display: none;
+      }
+
+      .kutu3lu {
+        flex-direction: column;
+        justify-content: center;
+      }
+    }

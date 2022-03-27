@@ -1,0 +1,23 @@
+Microsoft Windows [Version 10.0.19043.1348]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32>cd C:\Users\kurumsal\Desktop\DJANGO2
+
+C:\Users\kurumsal\Desktop\DJANGO2>python --version
+Python 3.10.4
+
+C:\Users\kurumsal\Desktop\DJANGO2>python -m venv env
+
+C:\Users\kurumsal\Desktop\DJANGO2>code
+
+C:\Users\kurumsal\Desktop\DJANGO2>env\Scripts\activate
+
+(env) C:\Users\kurumsal\Desktop\DJANGO2>pip install django
+
+(env) C:\Users\kurumsal\Desktop\DJANGO2>django-admin startproject NewsProject
+
+(env) C:\Users\kurumsal\Desktop\DJANGO2>cd NewsProject
+
+(env) C:\Users\kurumsal\Desktop\DJANGO2\NewsProject>manage.py startapp News
+
+(env) C:\Users\kurumsal\Desktop\DJANGO2\NewsProject>

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Türkiye'nin En Güzel Blogu
+{% endblock %}
+
+{% block content %}
+        <section class="row m-2 kutu3lu">
+          <!-- her 3 card için -->
+          {% if bloglar %}
+            {% for blog in bloglar %}
+
+            
+                <section class="col-sm-3">
+                    <div class="card" style="width: 15rem;">
+                    {% if blog.BlogImage != "NULL" %}
+                      <img class="card-img-top" src="{{ blog.BlogImage_238_134.url }}" alt="Card image cap">
+                    {% else %}
+                      <img class="card-img-top" src="https://via.placeholder.com/190x120/ff6361" alt="Card image cap">
+                    {% endif %}
+
+                    <div class="card-body">
+                        <h6 class="card-title">{{ blog.BlogTitle }}</h6>
+                        <p class="card-text">{{ blog.BlogText }}</p>
+                        <a href="/blog/{{ blog.BlogID }}" class="btn btn-info">Detail</a>
+                    </div>
+                    </div>
+                </section>
+
+
+            {% endfor %}
+          {% endif %}
+
+
+        </section>
+{% endblock %}
