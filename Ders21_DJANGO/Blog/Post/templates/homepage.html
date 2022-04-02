@@ -22,6 +22,11 @@ Türkiye'nin En Güzel Blogu
                     <div class="card-body">
                         <h6 class="card-title">{{ blog.BlogTitle }}</h6>
                         <p class="card-text">{{ blog.BlogText }}</p>
+                        {% if blog.BlogCategory %}
+                        <a href="category/{{blog.BlogCategory.CategoryID}}" >
+                        <p class="bg-light p-1" style="border-radius:3px; border:1px solid gray"> {{ blog.BlogCategory.CategoryName }}</p>
+                        </a>
+                        {% endif %}
                         <a href="/blog/{{ blog.BlogID }}" class="btn btn-info">Detail</a>
                     </div>
                     </div>

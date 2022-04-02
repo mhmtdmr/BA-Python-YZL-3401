@@ -21,11 +21,11 @@
                         {{ blog.BlogText }}  
                     </p>
                     <hr>
+                    <p class="bg-light p-1" style="border-radius:3px; border:1px solid gray">Category : {{ blog.BlogCategory.CategoryName }}</p>
                     <section id="tags">
-                        <span>tag1</span>
-                        <span>tag2</span>
-                        <span>tag3</span>
-                        <span>tag4</span>
+                        {% for tag in blog.BlogTags.all %}
+                            <span>{{ tag.TagName }}</span>
+                        {% endfor %}
                         <hr>
                     <p style="font-size:10px"> {{ blog.BlogPublishDate }} </p>
                     </section>

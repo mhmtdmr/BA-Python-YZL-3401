@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
-from .models import Blog
-
+from .models import Blog, Category
+from django.db.models import Q
 # Create your views here.
 def merhaba(request):
     # return HttpResponse("<h1>Merhaba</h1>")
@@ -66,3 +66,14 @@ def blog(request,blogid:int):
     myBlog = Blog.objects.get(pk=blogid) 
     # context = {"blog":myBlog}
     return render(request,"blog.html",{"blog":myBlog})
+
+def category(request,category_id:int):
+    bloglist = Blog.objects.filter(BlogCategory__CategoryID = category_id)    
+    return render(request,"homepage.html",{"bloglar":bloglist})
+
+def search(request):
+    # request.POST["search_term"]
+    bloglist = Blog.objects.filter(Q(BlogTitle__contains = request.POST["search_term"]) | Q(BlogText__contains = request.POST["search_term"]) ) 
+    return render(request,"homepage.html",{"bloglar":bloglist})
+
+

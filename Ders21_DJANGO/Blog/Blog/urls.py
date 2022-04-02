@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Post.views import merhaba,world,index,homepage,about,insertNewBlogs,blog
+from Post.views import merhaba,world,index,homepage,about,insertNewBlogs,blog,category,search
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -27,4 +27,6 @@ urlpatterns = [
     path('about/',about),
     path('insertnewblogs/',insertNewBlogs),
     path('blog/<int:blogid>',blog),
+    path('category/<int:category_id>',category),
+    path('search',search),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
